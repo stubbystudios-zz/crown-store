@@ -4,6 +4,8 @@ import './Header.scss';
 import { auth } from '../../firebase/firebase.utils';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../images/logo.svg';
+import CartIcon from '../CartIcon/CartIcon';
+import CartDropdown from '../CartDropdown/CartDropdown';
 
 const Header = ({ currentUser }) => {
   return (
@@ -19,7 +21,9 @@ const Header = ({ currentUser }) => {
           ? <div className='nav-item' onClick={() => auth.signOut()}>Sign out</div>
           : <Link className='nav-item' to='/signin'>Sign-in</Link>
         }
+        <CartIcon />
       </nav>
+      <CartDropdown />
     </header>
   )
 };
