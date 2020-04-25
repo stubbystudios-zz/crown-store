@@ -1,11 +1,11 @@
 import React from 'react';
-import './GlobalNav.scss';
+import { connect } from 'react-redux';
+import './Header.scss';
 import { auth } from '../../firebase/firebase.utils';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../images/logo.svg';
 
-const GlobalNav = ({ currentUser }) => {
-
+const Header = ({ currentUser }) => {
   return (
     <header className='global-nav'>
       <Link to='/' className='logo-container'>
@@ -24,4 +24,8 @@ const GlobalNav = ({ currentUser }) => {
   )
 };
 
-export default GlobalNav;
+const maptStateToProps = state => ({
+  currentUser: state.user.currentUser
+});
+
+export default connect(maptStateToProps)(Header);
