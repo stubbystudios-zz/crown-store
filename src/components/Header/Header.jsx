@@ -9,7 +9,7 @@ import CartDropdown from '../CartDropdown/CartDropdown';
 
 const Header = ({ currentUser, hidden }) => {
   return (
-    <header className='global-nav'>
+    <header className='header'>
       <Link to='/' className='logo-container'>
         <Logo className='logo' />
       </Link>
