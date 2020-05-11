@@ -1,6 +1,7 @@
 import React from 'react';
 import './CollectionPreview.scss'
 import CollectionItem from '../CollectionItem/CollectionItem';
+import { withRouter } from 'react-router-dom';
 
 const CollectionPreview = ({ title, items }) => {
   return (
@@ -16,4 +17,4 @@ const CollectionPreview = ({ title, items }) => {
   )
 }
 
-export default CollectionPreview;
+export default withRouter(CollectionPreview);

@@ -14,7 +14,7 @@ import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 import Header from './components/Header/Header';
 
 class App extends React.Component {
-  unsubscribeFromAuth = null
+  unsubscribeFromAuth = null;
 
   componentDidMount() {
     const { setCurrentUser } = this.props;
@@ -24,6 +24,7 @@ class App extends React.Component {
         const userRef = await createUserProfileDocument(userAuth);
 
         userRef.onSnapshot(snapShot => {
+          console.log('App-SNAPSHOT', snapShot);
           setCurrentUser({
             id: snapShot.id,
             ...snapShot.data()

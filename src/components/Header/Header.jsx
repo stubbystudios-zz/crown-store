@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 import { auth } from '../../firebase/firebase.utils';
-import { HeaderContainer, LogoContainer, NavContainer, NavLink } from './Header.styles';
+import { HeaderContainer, NavContainer, NavLink } from './Header.styles';
 import { ReactComponent as Logo } from '../../images/logo.svg';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 
@@ -14,9 +14,9 @@ import CartDropdown from '../CartDropdown/CartDropdown';
 const Header = ({ currentUser, hidden }) => {
   return (
     <HeaderContainer>
-      <LogoContainer to='/' className='logo-container'>
+      <HeaderContainer to='/' className='logo-container'>
         <Logo className='logo' />
-      </LogoContainer>
+      </HeaderContainer>
       <NavContainer role='navigation' className="nav">
         <NavLink className='nav-item' to='/'>Home</NavLink>
         <NavLink className='nav-item' to='/shop'>Shop</NavLink>
@@ -39,4 +39,4 @@ const mapStateToProps = createStructuredSelector({
   hidden: selectCartHidden
 });
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps)(Header); 
