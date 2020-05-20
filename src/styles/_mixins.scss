@@ -1,5 +1,0 @@
-@mixin set-font($sizeValue: 0.1, $fontWeight: normal) {
-  font-size: $sizeValue * 1px;
-  font-size: $sizeValue * 0.1rem;
-  font-weight: $fontWeight;
-}
