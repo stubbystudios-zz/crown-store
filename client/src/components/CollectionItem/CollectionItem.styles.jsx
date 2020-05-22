@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import CustomButton from '../CustomButton/CustomButton';
 
 export const CollectionItemContainer = styled.div`
-  width: 22vw;
+  align-items: center;
   display: flex;
   flex-direction: column;
   height: 350px;
-  align-items: center;
+  margin-bottom: 30px;
   position: relative;
 
   &:hover {
@@ -18,6 +18,11 @@ export const CollectionItemContainer = styled.div`
       opacity: 0.85;
       display: flex;
     }
+  }
+
+  @media screen and (min-width: 762px) {
+    margin-bottom: 0;
+    width: 22vw;
   }
 `;
 

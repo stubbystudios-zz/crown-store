@@ -1,17 +1,22 @@
 @import "../../styles/base.scss";
 
 .collection-preview {
-  display: flex;
-  flex-direction: column;
   margin-bottom: 30px;
 
   .title {
     font-size: 28px;
     margin-bottom: 25px;
   }
+}
 
-  .preview {
+@media screen and (min-width: $md) {
+  .collection-preview {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+
+    .preview {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
