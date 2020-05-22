@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import StripeCheckout from 'react-stripe-checkout';
+import { CartContext } from '../../providers/cart/CartProvider';
 
-const StripeCheckoutButton = ({ price }) => {
-  const priceForStripe = price * 100;
+const StripeCheckoutButton = () => {
+  const { cartItemPrice } = useContext(CartContext);
+  const priceForStripe = cartItemPrice * 100;
   const publishableKey = 'pk_test_iS3qdgpMj6gRW2StUFqrcqaj00wsBwvruH';
 
   const onToken = token => {
-    console.log(token);
     alert("Payment successful!")
   }
 
@@ -17,7 +18,7 @@ const StripeCheckoutButton = ({ price }) => {
       billingAddress
       shippingAddress
       image='https://svgshare.com/i/CUz.svg'
-      description={`Your total is $${price}`}
+      description={`Your total is $${cartItemPrice}`}
       amount={priceForStripe}
       panelLabel='Pay now'
       token={onToken}

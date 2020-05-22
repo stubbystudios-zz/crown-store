@@ -5,16 +5,19 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './redux/store';
+import CartProvider from './providers/cart/CartProvider';
 
 ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <React.StrictMode>
-        <PersistGate persistor={persistor}>
-          <App />
-        </PersistGate>
-      </React.StrictMode>
-    </BrowserRouter>
-  </Provider>,
+  <CartProvider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <React.StrictMode>
+          <PersistGate persistor={persistor}>
+            <App />
+          </PersistGate>
+        </React.StrictMode>
+      </BrowserRouter>
+    </Provider>
+  </CartProvider>,
   document.getElementById('root')
 );
