@@ -3,11 +3,10 @@ import CustomButton from '../CustomButton/CustomButton';
 
 export const CollectionItemContainer = styled.div`
   align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 350px;
+  height: 175px;
   margin-bottom: 30px;
   position: relative;
+  width: 44vw;
 
   &:hover {
     .image {
@@ -21,17 +20,23 @@ export const CollectionItemContainer = styled.div`
   }
 
   @media screen and (min-width: 762px) {
+    height: 350px;
     margin-bottom: 0;
     width: 22vw;
   }
 `;
 
 export const AddButton = styled(CustomButton)`
-  width: 80%;
+  display: none;
+  left: 10%;
   opacity: 0.7;
   position: absolute;
-  top: 255px;
-  display: none;
+  top: 100px;
+  width: 80%;
+
+  @media screen and (min-width: 762px) {
+    top: 255px;
+  }
 `;
 
 export const BackgroundImage = styled.div`
@@ -52,11 +57,9 @@ export const CollectionFooterContainer = styled.div`
 `;
 
 export const NameContainer = styled.span`
-  width: 90%;
   margin-bottom: 15px;
 `;
 
 export const PriceContainer = styled.span`
-  width: 10%;
   text-align: right;
 `;

@@ -4,7 +4,7 @@ html {
 
 body {
   font-family: "Open Sans Condensed", arial, sans-serif;
-  padding: 20px 60px;
+  padding: 15px;
 
   @include set-font(16, normal);
 }
@@ -62,4 +62,10 @@ ul {
 
 li {
   margin-bottom: 8px;
+}
+
+@media screen and (min-width: $md) {
+  body {
+    padding: 20px 60px;
+  }
 }

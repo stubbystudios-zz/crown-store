@@ -1,5 +1,6 @@
+@import '../../styles/base.scss';
+
 .menu-item {
-  min-width: 30%;
   height: 240px;
   flex: 1 1 auto;
   display: flex;
@@ -9,6 +10,7 @@
   margin: 0 7.5px 15px;
   position: relative;
   overflow: hidden;
+  width: 22vw;
 
   &:hover {
     cursor: pointer;
@@ -25,10 +27,6 @@
 
   &:last-child {
     margin-left: 7.5px;
-  }
-
-  &.lg {
-    height: 380px;
   }
 
   .background-image {
@@ -62,6 +60,16 @@
     .subtitle {
       font-weight: lighter;
       font-size: 16px;
+    }
+  }
+}
+
+@media screen and (min-width: $md) {
+  .menu-item {
+    min-width: 30%;
+    
+    &.lg {
+      height: 380px;
     }
   }
 }

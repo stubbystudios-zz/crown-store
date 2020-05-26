@@ -42,19 +42,24 @@ export const googleSignInStyles = css`
 `;
 
 export const CustomButtonContainer = styled.button`
-  min-width: 165px;
-  width: auto;
-  height: 50px;
-  letter-spacing: 0.5px;
-  line-height: 50px;
-  padding: 0 35px 0 35px;
-  font-size: 15px;
-  text-transform: uppercase;
-  font-family: "Open Sans Condensed";
-  font-weight: bolder;
+  align-items: center;
   cursor: pointer;
   display: flex;
+  font-family: "Open Sans Condensed";
+  font-size: 16px;
+  font-weight: bolder;
+  height: 50px;
   justify-content: center;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  width: auto;
 
   ${getButtonStyles}
+
+  @media screen and (min-width: 762px) {
+    padding: 0 35px;
+    min-width: 165px;
+  }
 `;
