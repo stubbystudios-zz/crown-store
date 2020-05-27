@@ -27,6 +27,10 @@
     .preview {
       display: flex;
       justify-content: space-between;
+
+      &:nth-child(2n) {
+        margin-left: 0;
+      }
     }
   }
 }

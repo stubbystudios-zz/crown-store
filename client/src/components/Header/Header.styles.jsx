@@ -18,9 +18,10 @@ export const LogoContainer = styled(Link)`
   justify-content: center;
   
   @media screen and (min-width: 762px) {
+    align-items: center;
     justify-content: flex-start;
-    padding: 25px;
-    width: 70px;
+    padding-right: 25px;
+    width: auto;
   }
 `;
 
