@@ -1,11 +1,12 @@
 import React, { useEffect, lazy, Suspense } from 'react';
 import { Route } from 'react-router-dom';
-
 import { connect } from 'react-redux';
 import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
 
-const CollectionsOverviewContainer = lazy(() => import('./pages/CollectionsOverviewContainer/CollectionsOverviewContainer'));
-const CollectionPageContainer = lazy(() => import('./pages/CollectionPageContainer/CollectionPageContainer'));
+import Spinner from '../../components/Spinner/Spinner';
+
+const CollectionsOverviewContainer = lazy(() => import('../../components/CollectionsOverview/CollectionsOverviewContainer'));
+const CollectionPageContainer = lazy(() => import('../CollectionPage/CollectionPageContainer'));
 
 const ShopPage = ({ fetchCollectionsStart, match }) => {
   useEffect(() => {
