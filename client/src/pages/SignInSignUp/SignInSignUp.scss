@@ -1,8 +1,20 @@
 @import "../../styles/base.scss";
 
 .sign-in-sign-up {
-  width: 850px;
-  display: flex;
-  justify-content: space-between;
   margin: 30px auto;
+
+  .group {
+    margin: 15px 0;
+  }
+
+  button {
+    padding: 0 25px;
+  }
+}
+
+@media screen and (min-width: $md) {
+  .sign-in-sign-up {
+    display: flex;
+    justify-content: space-between;
+  }
 }

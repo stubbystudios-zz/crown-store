@@ -1,9 +1,16 @@
+@import '../../styles/base.scss';
+
 .sign-up {
   display: flex;
   flex-direction: column;
-  width: 380px;
 
   .title {
-    margin: 10px 0;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: $md) {
+  .sign-up {
+    width: 48%;
   }
 }

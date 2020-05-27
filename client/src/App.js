@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import './styles/base.scss';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -6,11 +6,12 @@ import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { checkUserSession } from './redux/user/user.actions';
 
-import Homepage from './pages/Homepage/Homepage';
-import ShopPage from './pages/ShopPage/ShopPage';
-import SignInSignUp from './pages/SignInSignUp/SignInSignUp';
-import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 import Header from './components/Header/Header';
+
+const Homepage = lazy(() => import('./pages/Homepage/Homepage'));
+const ShopPage = lazy(() => import('./pages/ShopPage/ShopPage'));
+const SignInSignUp = lazy(() => import('./pages/SignInSignUp/SignInSignUp'));
+const CheckoutPage = lazy(() => import('./pages/CheckoutPage/CheckoutPage'));
 
 const App = ({ checkUserSession, currentUser }) => {
   useEffect(() => {
@@ -20,16 +21,18 @@ const App = ({ checkUserSession, currentUser }) => {
     <>
       <Header />
       <Switch>
-        <Route exact path='/' component={Homepage} />
-        <Route path='/shop' component={ShopPage} />
-        <Route exact path='/checkout' component={CheckoutPage} />
-        <Route exact path='/signin'
-          render={() =>
-            currentUser
-              ? (<Redirect to='/' />)
-              : (<SignInSignUp />)
-          }
-        />
+        <Suspense fallback={<div>...Loading</div>}>
+          <Route exact path='/' component={Homepage} />
+          <Route path='/shop' component={ShopPage} />
+          <Route exact path='/checkout' component={CheckoutPage} />
+          <Route exact path='/signin'
+            render={() =>
+              currentUser
+                ? (<Redirect to='/' />)
+                : (<SignInSignUp />)
+            }
+          />
+        </Suspense>
       </Switch>
     </>
   )
