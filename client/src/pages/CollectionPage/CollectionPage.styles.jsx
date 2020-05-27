@@ -5,17 +5,13 @@ export const CollectionPageContainer = styled.div`
 `;
 
 export const CollectionTitle = styled.h2`
-  font-size: 38px;
-  margin: 0 auto 30px;
+  font-size: 28px;
+  margin-bottom: 30px;
 `;
 
 export const CollectionItemsContainer = styled.div`
   & > div {
     margin-bottom: 30px;
-
-    &:nth-child(2n) {
-      margin-left: auto;
-    }
   }
 
   display: grid;
@@ -27,10 +23,6 @@ export const CollectionItemsContainer = styled.div`
 
     & > div {
       margin-bottom: 30px;
-
-      &:nth-child(2n) {
-        margin-left: 0;
-      }
     }
   }
 `;

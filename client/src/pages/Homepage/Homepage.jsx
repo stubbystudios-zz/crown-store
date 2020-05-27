@@ -4,7 +4,7 @@ import Directory from '../../components/Directory/Directory';
 
 const Homepage = ({ history }) => {
   return (
-    <HomepageContainer>
+    <HomepageContainer className="container">
       <Directory history={history} />
     </HomepageContainer>
   )

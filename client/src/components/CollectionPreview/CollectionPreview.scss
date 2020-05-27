@@ -7,10 +7,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
-    
-    &:nth-child(2n) {
-      margin-left: auto;
-    }
   }
 
   .title {
@@ -26,12 +22,7 @@
     flex-direction: column;
 
     .preview {
-      display: flex;
-      justify-content: space-between;
-
-      &:nth-child(2n) {
-        margin-left: 0;
-      }
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
 }

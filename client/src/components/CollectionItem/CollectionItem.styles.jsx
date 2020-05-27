@@ -6,7 +6,6 @@ export const CollectionItemContainer = styled.div`
   height: 175px;
   margin-bottom: 30px;
   position: relative;
-  width: 44vw;
 
   &:hover {
     .image {
@@ -22,7 +21,6 @@ export const CollectionItemContainer = styled.div`
   @media screen and (min-width: 762px) {
     height: 350px;
     margin-bottom: 0;
-    width: 22vw;
   }
 `;
 
@@ -40,12 +38,13 @@ export const AddButton = styled(CustomButton)`
 `;
 
 export const BackgroundImage = styled.div`
-  width: 100%;
-  height: 95%;
+  background-image: ${({ imageUrl }) => `url(${imageUrl})`};
   background-size: cover;
   background-position: center;
+  display: block;
+  height: 95%;
   margin-bottom: 5px;
-  background-image: ${({ imageUrl }) => `url(${imageUrl})`};
+  width: 100%;
 `;
 
 export const CollectionFooterContainer = styled.div`
