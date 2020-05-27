@@ -10,7 +10,7 @@ import CheckoutItem from '../../components/CheckoutItem/CheckoutItem';
 
 const CheckoutPage = ({ cartItems, total }) => {
   return (
-    <section className='checkout-page'>
+    <section className='checkout-page container'>
       <header className='checkout-header'>
         <ul>
           <li className='header-block'>
@@ -41,7 +41,7 @@ const CheckoutPage = ({ cartItems, total }) => {
       <StripeCheckoutButton price={total} />
       <div className='cc-info'>
         <p>Use demo credit card:</p>
-        <p>4242 4242 4242 4242 - 04/20 - 123</p>
+        <p>4242 4242 4242 4242 - 12/21 - 123</p>
       </div>
     </section>
   )
