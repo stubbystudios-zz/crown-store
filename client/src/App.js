@@ -7,6 +7,7 @@ import { selectCurrentUser } from './redux/user/user.selectors';
 import { checkUserSession } from './redux/user/user.actions';
 
 import Header from './components/Header/Header';
+import Spinner from './components/Spinner/Spinner';
 
 const Homepage = lazy(() => import('./pages/Homepage/Homepage'));
 const ShopPage = lazy(() => import('./pages/ShopPage/ShopPage'));
@@ -21,7 +22,7 @@ const App = ({ checkUserSession, currentUser }) => {
     <>
       <Header />
       <Switch>
-        <Suspense fallback={<div>...Loading</div>}>
+        <Suspense fallback={<Spinner />}>
           <Route exact path='/' component={Homepage} />
           <Route path='/shop' component={ShopPage} />
           <Route exact path='/checkout' component={CheckoutPage} />
