@@ -41,7 +41,6 @@ export const BackgroundImage = styled.div`
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
   background-size: cover;
   background-position: center;
-  display: block;
   height: 95%;
   margin-bottom: 5px;
   width: 100%;
